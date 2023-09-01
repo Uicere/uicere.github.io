@@ -121,7 +121,7 @@
 <p>由于 <strong>主题配置文件</strong> 可能有所改动，就不在这里给大家详细说明，我会在 <strong>主题配置文件</strong> 中添加适当的注释，麻烦大家参考页面以及注释内容进行修改。</p>
 <h2 id="第三方服务"><a class="markdownIt-Anchor" href="#第三方服务"></a> 第三方服务</h2>
 <h3 id="abbrlink"><a class="markdownIt-Anchor" href="#abbrlink"></a> Abbrlink</h3>
-<p>Hexo 默认的文章链接是以时间和文件名称命名的，如果文件名称是中文，那么文章链接会被转译，而转义后的链接很长，并且也不美观。<a href="https://github.com/rozbo/hexo-abbrlink">Hexo-Abbrlink</a> 插件基于文章的标题自动为文章生成固定的链接。</p>
+<p>Hexo 默认的文章链接是以时间和文件名称命名的，如果文件名称是中文，那么文章链接会被转译，而转义后的链接很长，并且也不美观。<a target="_blank" rel="noopener" href="https://github.com/rozbo/hexo-abbrlink">Hexo-Abbrlink</a> 插件基于文章的标题自动为文章生成固定的链接。</p>
 <p>1.安装 Hexo-Abbrlink 插件。前往站点根目录，执行命令安装：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
 <p>2.编辑 <strong>站点配置文件</strong>，修改以下配置：</p>
@@ -217,9 +217,9 @@ Valine 会自动查找页面中 class 值为 <code>leancloud_visitors</code> 的
 <p>特别说明 <strong>主题配置文件</strong> 中评论的数据存储如果使用 LeanCloud，则 <code>appId</code> 与 <code>appKey</code> 请大家自行配置自己的参数。另外，由于 LeanCloud <strong>不再提供默认域名</strong>，<strong>国内版本需要域名备案</strong>，否则无法使用。</p>
 </blockquote>
 <h3 id="赞赏页面"><a class="markdownIt-Anchor" href="#赞赏页面"></a> 赞赏页面</h3>
-<p>赞赏页面使用了 <a href="https://github.com/Kaiyuan/sponsor-page">Sponsor Page</a>，并做了相关修改使其适应博客样式。感兴趣的小伙伴自行去了解吧。</p>
+<p>赞赏页面使用了 <a target="_blank" rel="noopener" href="https://github.com/Kaiyuan/sponsor-page">Sponsor Page</a>，并做了相关修改使其适应博客样式。感兴趣的小伙伴自行去了解吧。</p>
 <h3 id="音乐播放器"><a class="markdownIt-Anchor" href="#音乐播放器"></a> 音乐播放器</h3>
-<p>音乐播放器功能是使用 <code>APlayer.js</code> 以及 <code>Meting.js</code> 实现，配置详情参见 <a target="_blank" rel="noopener" href="https://aplayer.js.org/#/home">APlayer</a>、<a href="https://github.com/metowolf/MetingJS">Meting</a>。<br />
+<p>音乐播放器功能是使用 <code>APlayer.js</code> 以及 <code>Meting.js</code> 实现，配置详情参见 <a target="_blank" rel="noopener" href="https://aplayer.js.org/#/home">APlayer</a>、<a target="_blank" rel="noopener" href="https://github.com/metowolf/MetingJS">Meting</a>。<br />
 主题中有两种实现方式，一种是 <code>APlayer.js</code> 结合 <code>Meting.js</code> 的实现方式，另外一种是 <code>APlayer.js</code> 单独的实现方式，两种实现方式各有优缺点：<br />
 第一种实现方式配置简单，并且可以从各个音乐平台解析音乐。由于是从各个平台解析，故而不是特别稳定，并且在 <code>IE</code> 浏览器中需要特殊设置。<br />
 第二种实现方式配置相对复杂，需要单独提供音乐相关信息，但是十分稳定，且对于 <code>IE</code> 浏览器也可兼容，无需特殊配置。<br />
@@ -242,7 +242,7 @@ Github Page 支持设置自己的域名，建议在 Hexo 主题的 source 文件
 <h3 id="关于-valine"><a class="markdownIt-Anchor" href="#关于-valine"></a> 关于 Valine</h3>
 <p>由于很多小伙伴直接使用主题中 Valine 的 <code>appId</code> 以及 <code>appKey</code>，而且 Valine 默认设置的 <code>path</code> 为 <code>window.location.pathname</code>，会导致大家的留言板数据出现异常。所以这里还是建议大家设置自己的 LeanCloud，<strong>推荐使用国际版</strong> ，后续如果想要添加邮件提醒，这样会方便很多。</p>
 <h3 id="关于-waline"><a class="markdownIt-Anchor" href="#关于-waline"></a> 关于 Waline</h3>
-<p>Valine 评论功能简单，不支持评论管理以及通知功能，虽说可以通过 <a href="https://github.com/DesertsP/Valine-Admin">Valine-Admin</a> 实现评论管理以及通知等功能，但非常麻烦。其他的评论系统有些需要服务器，例如 Artalk。所以选择集成了 Waline，通过在 Vercel 部署以达到无需服务器的目的。如果考虑到 <strong>访问速度</strong> 的问题，可以选择部署在 <strong>华为云</strong> 的 Serverless 上，每个月都有免费的资源。</p>
+<p>Valine 评论功能简单，不支持评论管理以及通知功能，虽说可以通过 <a target="_blank" rel="noopener" href="https://github.com/DesertsP/Valine-Admin">Valine-Admin</a> 实现评论管理以及通知等功能，但非常麻烦。其他的评论系统有些需要服务器，例如 Artalk。所以选择集成了 Waline，通过在 Vercel 部署以达到无需服务器的目的。如果考虑到 <strong>访问速度</strong> 的问题，可以选择部署在 <strong>华为云</strong> 的 Serverless 上，每个月都有免费的资源。</p>
 <h3 id="关于-vercel"><a class="markdownIt-Anchor" href="#关于-vercel"></a> 关于 Vercel</h3>
 <p>Github Pages 内容部署的服务器在美国，可能会导致国内部分地区加载速度较慢，大家可以将项目部署到 <strong>Vercel</strong> ，来提高网站的访问速度，同时也 <strong>方便百度对站点内容进行收录</strong> 。如果 <strong>网站域名已经备案</strong> ，则可以考虑 <strong>国内的阿里云或腾讯云的相关产品</strong> ，效果会更好。<br />
 目前 Vercel 提供的默认 <code>.app</code> 域名由于 <strong>DNS 污染</strong> 国内无法访问，<strong>需要添加自己的域名（无需备案）</strong>。</p>
