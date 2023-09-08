@@ -9,7 +9,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title>
         
-            归档
+            博弈论练习
         
     </title>
     <link rel="shortcut icon" href="#"/>
@@ -37,15 +37,40 @@
 </head>
 <body>
     <a id="cover"></a>
-    <link type="text/css" rel="stylesheet" href="/css/archive.css">
+    <link type="text/css" rel="stylesheet" href="/css/post.css">
 <div id="header" class="header">
     <div class="vertical">
         <div class="inner">
             
-                <h1 class="header-subtitle">归档</h1>
+                <h1 class="header-subtitle">博弈论练习</h1>
                 <div class="header-subinfo">
-                    <p class="article-info-text Chinese"></p>
-                    <p class="article-info-text English"></p>                  
+                    <p class="article-info-text">
+                        <span>
+                            <i class="iconfont icon-time"></i> 发表时间：2023-09-08
+                        </span>
+                        
+                            
+                                <span id="/article/17/" class="leancloud_visitors" data-flag-title="博弈论练习">
+                                    <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
+                                </span>
+                            
+                            
+                                <span>
+                                    <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/article/17/"></span>
+                                </span>
+                              
+                        
+                    </p>
+                    
+                        
+                            <span class="category-color">数学</span>
+                        
+                    
+                    
+                        
+                            <span class="tag-color">博弈论</span>
+                        
+                    
                 </div>
             
         </div>
@@ -54,85 +79,106 @@
 </div>
 <div id="container">
     
-        
-            <!-- 归档页面、分类归档页面、标签归档页面 -->
-            <div class="articles">
-                <div class="articles-wrap">
-                    <span class="archive-move-on"></span>
-                    <span class="archive-counter">
+        <!-- 文章页面 -->
+        <div id="article">
+            <div class="toc"></div>
+            <div class="article-body">
+                <h3 id="参考文献"><a class="markdownIt-Anchor" href="#参考文献"></a> 参考文献</h3>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/Wolfycz/qian-tan-suan-fa-bo-yi-lun-zong-ling-kai-shi-di-bo-yi-lun-post">浅谈算法——博弈论（从零开始的博弈论）</a></p>
+<h1 id="公平组合游戏"><a class="markdownIt-Anchor" href="#公平组合游戏"></a> 公平组合游戏</h1>
+<ul>
+<li>
+<p>双玩家交替行动</p>
+</li>
+<li>
+<p>与玩家无关只与状态有关</p>
+</li>
+<li>
+<p>不能行动的玩家判负</p>
+</li>
+</ul>
+<p>注意：NIM 是公平组合游戏，<strong>但是围棋绝对不是，不满足后两个条件</strong>。</p>
+<h2 id="有向图博弈"><a class="markdownIt-Anchor" href="#有向图博弈"></a> 有向图博弈</h2>
+<p>定义 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> 态为表示当前状态对于上一个玩家是必胜的，即接手到当前局面的玩家是必败的。（<strong>简单说就是必败态</strong>）</p>
+<p>定义 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 态为表示当前状态对于下一个玩家（就是要执行还未执行操作的这种局面下的玩家）是必胜的，即接手到当前局面的玩家是必胜的。（<strong>简单说就是必胜态</strong>）</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> 态在绝大博弈游戏种都是终止状态。</p>
+<p><strong>重要结论：</strong></p>
+<ul>
+<li>
+<p>对于任意的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> 态他要么是一个终止状态，要么他的所有后继状态都是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 态。</p>
+</li>
+<li>
+<p>对于任意的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 态，他至少有一个后继状态是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> 态。</p>
+</li>
+</ul>
+<p><strong>也就是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> 态能反推上一个状态，而 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 态是不行的。</strong></p>
+<h3 id="p6560-sbcoi2020-时光的流逝"><a class="markdownIt-Anchor" href="#p6560-sbcoi2020-时光的流逝"></a> <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P6560">P6560 [SBCOI2020] 时光的流逝</a></h3>
+<p>这题我们考虑拓扑排序。</p>
+<p>有环平局。</p>
+<p>剩下的从终止状态建反图，求得所有已知的局面。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">read</span>(st),<span class="built_in">read</span>(ed);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            in[i]=bufin[i];</span><br><span class="line">            state[i]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(!in[i])&#123;</span><br><span class="line">                state[i]=<span class="number">-1</span>;</span><br><span class="line">                que.<span class="built_in">push</span>(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!state[ed])&#123;</span><br><span class="line">            state[ed]=<span class="number">-1</span>;<span class="comment">//P态必败态</span></span><br><span class="line">            que.<span class="built_in">push</span>(ed);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(que.<span class="built_in">size</span>())&#123;</span><br><span class="line">            <span class="type">int</span> u=que.<span class="built_in">front</span>();</span><br><span class="line">            que.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=h[u];~i;i=ne[i])&#123;</span><br><span class="line">                <span class="type">int</span> v=e[i];</span><br><span class="line">                <span class="keyword">if</span>(state[v]) <span class="keyword">continue</span>;<span class="comment">//已经确定状态不管</span></span><br><span class="line">                --in[v];</span><br><span class="line">                <span class="keyword">if</span>(state[u]==<span class="number">-1</span>)&#123;</span><br><span class="line">                    state[v]=<span class="number">1</span>;</span><br><span class="line">                    que.<span class="built_in">push</span>(v);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(!in[v])&#123;</span><br><span class="line">                    <span class="comment">//如果后继节点不存在必败态，那么此时更新</span></span><br><span class="line">                    <span class="comment">//更新为必败态</span></span><br><span class="line">                    <span class="keyword">if</span>(state[v]!=<span class="number">1</span>)&#123;</span><br><span class="line">                        state[v]=<span class="number">-1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    que.<span class="built_in">push</span>(v);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//环上由于拓扑结构，永远无法访问，那么是平局态</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">write</span>(state[st]),<span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="结论p-态必能推出-n-态当该点的所有后继状态都无法唯一确定自己那么此时自己绝对是必败态即意味着后继节点都是必胜态"><a class="markdownIt-Anchor" href="#结论p-态必能推出-n-态当该点的所有后继状态都无法唯一确定自己那么此时自己绝对是必败态即意味着后继节点都是必胜态"></a> 结论：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> 态必能推出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 态，当该点的所有后继状态都无法唯一确定自己，那么此时自己绝对是必败态，即意味着后继节点都是必胜态。</h4>
+
+                
+                <p class="end">__END__</p>
+            </div>
+            <div class="article-footer">
+                <div class="suffix-box">
+    <div class="suffix-box-left">
+        <img src="/image/sidebar/avatar.jpg" alt="llx">
+    </div>
+    <div class="suffix-box-right">
+        <span class="suffix-box-title">文章作者：</span>llx
+        <br>
+        <span class="suffix-box-title">文章出处：</span><a href="/article/17/" target="_blank">博弈论练习</a>
+        <br>
+        <span class="suffix-box-title">作者签名：</span>于逆境坚定信仰，于苍穹追求更耀眼的星辉。
+        <br>
+        <span class="suffix-box-title">关于主题：</span><a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
+        <br>
+        <span class="suffix-box-title">版权声明：</span>文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
+        <br>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+                
+                    <div class="category">
+                        分类：
                         
-                            目前共计 15 篇日志，继续加油！
+                            <a href="/category/%E6%95%B0%E5%AD%A6/">数学</a>
                         
-                    </span>
-                    
-                    
+                    </div>
+                
+                
+                    <div class="tag">
+                        标签：
                         
-                            <div class="archive-title">
-                                <h2 class="archive-year">2023</h2>
-                            </div>
-                            
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/article/5/"><span>2023spring</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">08-30</span>
-                                </div>
-                            </div>
-                        </div>
+                            <a href="/tag/%E5%8D%9A%E5%BC%88%E8%AE%BA/">博弈论</a>
+                        
+                    </div>
+                
+                <div class="article-prev-next">
                     
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/article/10/"><span>P7468 [NOI Online 2021 提高组] 愤怒的小 N</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">08-30</span>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="/article/18/" class="prev-prefix">« </a> 上一篇：    <a href="/article/18/" title="发布于 2023-09-08 12:00">AGC048D-Pocky Game</a>
+                        <br>
                     
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/article/7/"><span>noi-online-s</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">08-30</span>
-                                </div>
-                            </div>
-                        </div>
                     
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/article/9/"><span>NOIP</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">08-30</span>
-                                </div>
-                            </div>
-                        </div>
-                    
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/article/8/"><span>noi-online2022</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">08-30</span>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="/article/16/" class="next-prefix">» </a> 下一篇：    <a href="/article/16/" title="发布于 2023-09-06 06:33">CSP模拟赛</a>
                     
                 </div>
             </div>
             
+    <div class="article-comments">
         
-    <div class="pagination-bottom">
-        <div class="pagination">
-            
-                <a class="extend prev" rel="prev" href="/archive/">上一页</a><a class="page-number" href="/archive/">1</a><span class="page-number current">2</span>
-            
-        </div>
+            <div class="comments-title">
+                评论列表
+            </div>
+        
+        <div class="comments-content"></div>
     </div>
-
+    
+ 
+        </div>
     
 </div>
     <div id="footer">
@@ -170,7 +216,7 @@
                     
                         <li class=""><a href="/tag" class="" target="_self"><span class="iconfont icon-discount-fill"></span>标签</a></li>
                     
-                        <li class=" active "><a href="/archive" class="" target="_self"><span class="iconfont icon-calendar-fill"></span>归档</a></li>
+                        <li class=""><a href="/archive" class="" target="_self"><span class="iconfont icon-calendar-fill"></span>归档</a></li>
                     
                         <li class=""><a href="/donate" class="" target="_self"><span class="iconfont icon-heart-fill"></span>赞赏</a></li>
                     
